@@ -6,3 +6,4 @@ document.addEventListener('DOMContentLoaded', () => {
   appDiv.className = 'app';
   document.body.appendChild(appDiv);
 });
+
