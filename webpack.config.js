@@ -17,10 +17,11 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.resolve(__dirname, 'public'), // Serve static files from 'public'
     },
-    compress: true,
     port: 9000,
+    open: true,
   },
 };
+
 
