@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A sample website with an NPM build process using Webpack",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "webpack serve --open",
     "build": "webpack --mode production",
     "test": "echo 'No tests specified.'"
   },
@@ -14,6 +14,7 @@
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.97.1",
-    "webpack-cli": "^5.0.2"
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.15.0"
   }
 }
