@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development', // Use 'development' for debugging
   entry: './src/app.js',
   output: {
     filename: 'bundle.js',
@@ -17,7 +17,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'public'), // Serve static files from 'public'
+      directory: path.join(__dirname, 'public'), // Serve files from 'public'
     },
     port: 9000,
     open: true,
