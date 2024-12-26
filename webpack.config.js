@@ -1,15 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/app.js', // Entry point for your application
+  mode: 'production',
+  entry: './src/app.js',
   output: {
-    filename: 'bundle.js', // Output file name
-    path: path.resolve(__dirname, 'public'), // Output directory
+    filename: 'bundle.js',
+    path: __dirname + '/dist',
   },
   module: {
     rules: [
       {
-        test: /\.css$/, // Process CSS files
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
     ],
