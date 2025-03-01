@@ -14,3 +14,64 @@ body {
   text-align: center;
   max-width: 600px;
 }
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+section {
+  margin: 20px 0;
+}
+
+h2 {
+  color: #4CAF50;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  background-color: #e7f3e7;
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 calc(33% - 40px);
+  box-sizing: border-box;
+}
+
+.feature h3 {
+  margin-top: 0;
+}
+
+.feature p {
+  color: #333;
+}
