@@ -1,0 +1,45 @@
+mode: local
+identifier: locathost
+category: prod
+username: localhost
+jobs:
+  - stages:
+      - name: Setup and Clone
+        tasks:
+          setup_and_clone:
+            enabled: true
+            branches: [master]
+            clone_dir: "/tmp/clone_repo_trial"
+            source_url: "https://github.com/deeeye2/sample-npm-website.git"
+
+      - name: NPM Build
+        tasks:
+          npm:
+            enabled: true
+            output_dir: "/tmp/npm_artifacts"
+            clone_dir: "/tmp/clone_repo_trial"
+            build_output_dir: dist
+
+      - name: archive
+        tasks:
+          archive_artifact:
+            enabled: true   # ✅ Ensure archiving is enabled
+            archive_format: tar.gz  # Options: zip, tar.gz, tar.xz, tar.bz2
+            artifact_dir: "/tmp/npm_artifacts"  # ✅ Ensure this directory exists
+            artifact_name: "my_deployment_package"  # ✅ Name of the final archive file
+
+      - name: pre Deployment
+        tasks:
+          pre_deployment:
+            enabled: true
+            instance_deployment: true
+            instance_count: 1
+            instance_type: "t3.micro"
+            region: "us-east-1"
+            ami: "ami-050887ebff330de9f"
+            key_name: "jenkins_key"
+            security_group: "sg-04ac7dc75e1f54b3a"
+            deployment_file: "/tmp/npm_artifacts/my_deployment_package.tar.gz"
+            source_package: "/tmp/npm_artifacts/my_deployment_package.tar.gz"
+            dest_path: "/tmp/my_deployment_package.tar.gz" 
+            deployment_path: "/tmp/my_deployment_package.tar.gz" 
