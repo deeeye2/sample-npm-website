@@ -20,7 +20,7 @@ jobs:
             clone_dir: "/tmp/clone_repo_trial"
             build_output_dir: dist
 
-      - name: archive
+      - name: Archive
         tasks:
           archive_artifact:
             enabled: true   # ✅ Ensure archiving is enabled
