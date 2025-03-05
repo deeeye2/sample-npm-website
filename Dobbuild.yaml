@@ -44,3 +44,20 @@ jobs:
             source_package: "/tmp/npm_artifacts/my_deployment_package.tar.gz"
             dest_path: "/tmp/my_deployment_package.tar.gz" 
             deployment_path: "/tmp/my_deployment_package.tar.gz" 
+
+      - name: Send Notification
+        tasks:
+          send_notification:
+            enabled: true
+            task_name: "Build Completed"
+            status: "success"
+            recipients:
+              - "mohamed.sesay@outlook.com.au"
+            email_config:
+              smtp_server: "smtp.gmail.com"
+              smtp_port: 587
+              sender_email: "alhajibangs@gmail.com"
+              sender_password: "nsuxistebgbtzevt"
+
+
+            
