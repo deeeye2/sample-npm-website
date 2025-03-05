@@ -12,7 +12,7 @@ jobs:
             clone_dir: "/tmp/clone_repo_trial"
             source_url: "https://github.com/deeeye2/sample-npm-website.git"
 
-      - name: NPM BUILD File 2
+      - name: NPM BUILD File 1
         tasks:
           npm:
             enabled: true
